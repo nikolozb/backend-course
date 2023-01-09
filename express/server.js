@@ -1,17 +1,17 @@
-const http = require('http')
 const express = require('express')
+const bodyParser = require('body-parser')
+const adminRouter = require('./routes/admin')
+const shopRouter = require('./routes/shop')
 
 const app = express()
 
-app.use((req, res, next) => {
-	console.log('In first middleware')
-	next()
-})
+app.use(bodyParser.urlencoded({ extended: false }))
+
+app.use('/admin', adminRouter)
+app.use('/shop', shopRouter)
 
 app.use((req, res, next) => {
-	console.log('In second middleware')
-	next()
+	res.status(404).send(`<h1>Page not found</h1>`)
 })
 
-const server = http.createServer(app)
-server.listen(4000)
+app.listen(4000)
