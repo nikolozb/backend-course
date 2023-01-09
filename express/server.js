@@ -14,7 +14,7 @@ app.engine(
 		defaultLayout: 'main-layout',
 	})
 )
-app.set('view engine', 'handlebars')
+app.set('view engine', 'ejs')
 app.set('views', process.cwd() + '/express/views')
 
 app.use(bodyParser.urlencoded({ extended: false }))
