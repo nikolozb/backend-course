@@ -1,0 +1,23 @@
+{
+	"name": "academind-nodejs",
+	"version": "1.0.0",
+	"main": "index.js",
+	"scripts": {
+		"start": "nodemon ./workflow-and-debug/server.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/nikolozb/backend-course.git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/nikolozb/backend-course/issues"
+	},
+	"homepage": "https://github.com/nikolozb/backend-course#readme",
+	"description": "",
+	"devDependencies": {
+		"nodemon": "^2.0.20"
+	}
+}
