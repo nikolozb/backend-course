@@ -1,12 +1,20 @@
 const express = require('express')
 const path = require('path')
 const bodyParser = require('body-parser')
+const { engine } = require('express-handlebars')
 const adminData = require('./routes/admin')
 const shopRouter = require('./routes/shop')
 
 const app = express()
 
-app.set('view engine', 'pug')
+app.engine(
+	'handlebars',
+	engine({
+		extname: 'handlebars',
+		defaultLayout: 'main-layout',
+	})
+)
+app.set('view engine', 'handlebars')
 app.set('views', process.cwd() + '/express/views')
 
 app.use(bodyParser.urlencoded({ extended: false }))
