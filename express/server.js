@@ -1,19 +1,19 @@
 const express = require('express')
 const path = require('path')
 const bodyParser = require('body-parser')
-const { engine } = require('express-handlebars')
+// const { engine } = require('express-handlebars')
 const adminData = require('./routes/admin')
 const shopRouter = require('./routes/shop')
 
 const app = express()
 
-app.engine(
-	'handlebars',
-	engine({
-		extname: 'handlebars',
-		defaultLayout: 'main-layout',
-	})
-)
+// app.engine(
+// 	'handlebars',
+// 	engine({
+// 		extname: 'handlebars',
+// 		defaultLayout: 'main-layout',
+// 	})
+// )
 app.set('view engine', 'ejs')
 app.set('views', process.cwd() + '/express/views')
 
